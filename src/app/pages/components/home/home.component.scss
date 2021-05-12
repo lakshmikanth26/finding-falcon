@@ -1,0 +1,96 @@
+.content {
+  margin-top: 60px;
+}
+
+.success-content {
+  margin-top: 100px;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: x-large;
+  font-weight: bold;
+  color:rgb(39, 55, 204)
+}
+
+@media screen and (min-width: 450px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-left: 40%;
+    padding-top: 10px;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding-top: 10px;
+  }
+}
+
+mat-card {
+  box-shadow: 0 8px 8px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  border-radius: 4px;
+  border: 1px solid rgb(168, 167, 167);
+  background-color: #f0f0f0;
+  width: 50%;
+  height: 16em;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.card-item {
+  border: 1px solid rgb(168, 167, 167);
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.text {
+  font-size: large;
+  margin-left: 65px;
+  margin-bottom: 30px;
+}
+
+.time {
+  margin-left: 45%;
+}
+
+.select {
+    margin-left: 61px;
+    width: 54%;
+    background-color: transparent;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  margin-top: -5%;
+  color: black;
+}
+
+.example-radio-button {
+  margin: 5px;
+  color: black;
+}
+
+.mat-list-base .mat-list-item {
+  height: fit-content;
+} 

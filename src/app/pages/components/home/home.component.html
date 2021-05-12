@@ -1,0 +1,53 @@
+<div class="content" #content *ngIf="success">
+    <h4>Select Planets you want to search in :</h4>
+    <h2 class="time">Time taken:{{timeTaken}}
+        <button mat-raised-button color="primary" (click)="findingFalcone()" [disabled]="findFalcone">Find
+            Falcone</button>
+    </h2>
+    <mat-grid-list cols={{col}} rowHeight="315px">
+        <mat-grid-tile *ngFor="let name of totalPlanets;index as i;">
+            <mat-card class="card-item">
+                <mat-list role="list">
+                    <mat-list-item role="listitem">
+                        <label class="text"> {{name}} </label>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <mat-form-field class="select" appearance="fill">
+                            <mat-label>Select planet</mat-label>
+                            <mat-select formcontrolname="planetOne" (selectionChange)="selectPlanet($event,name)">
+                                <mat-option *ngFor="let planet of planets" [value]="planet"
+                                    [disabled]="planet.disabled">
+                                    {{planet.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item *ngIf="vehicle[i]" class="radio" role="listitem">
+                        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+                            <mat-radio-button
+                                [disabled]="distance[i] > availableVehicle.max_distance || totalNum[j] == 0"
+                                class="example-radio-button"
+                                *ngFor="let availableVehicle of availableVehicles;index as j;"
+                                [value]="availableVehicle" (change)="selectVehicle($event,name,i)">
+                                {{availableVehicle.name}}({{totalNum[j]}})
+                            </mat-radio-button>
+                        </mat-radio-group>
+                    </mat-list-item>
+
+                </mat-list>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<div class="success-content output" *ngIf="!success">
+    <div *ngIf="successFind.status == 'success'">
+        <p> Success! Congratulations on Finding Falcon King Shan is mighty Pleased.</p>
+        <p>Time Taken : {{timeTaken}}</p>
+        <p>Planet Found: {{successFind.planet_name}}</p>
+    </div>
+    <div *ngIf="successFind.status == 'false'">
+        <p> Oh no! No planet found Better luck next time.</p>
+    </div>
+</div>

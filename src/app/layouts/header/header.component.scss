@@ -1,0 +1,36 @@
+.spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+  }
+
+  
+  @media screen and (max-width: 450px) {
+    .header {
+        font-size: 100%;
+        margin-left: 10px;
+    }
+  }
+
+  @media screen and (min-width: 535px) {
+    .header {
+        margin-left: 40%;
+        font-size: xx-large;
+    }
+  }
+
+  button {
+    margin-right: 5px;
+    padding-left: 5px;
+  }
